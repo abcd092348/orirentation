@@ -1,0 +1,358 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090c">
+
+  <title>Class Live Chat | UET Taxila</title>
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    .chat-page {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      padding: 24px;
+    }
+
+    .chat-panel {
+      background: #12151c;
+      border: 1px solid #292d37;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .chat-heading {
+      padding: 22px;
+      border-bottom: 1px solid #292d37;
+    }
+
+    .chat-heading h1 {
+      color: #ff6b2c;
+      margin-bottom: 8px;
+    }
+
+    .chat-heading p,
+    .chat-note {
+      color: #a5a8b3;
+    }
+
+    .chat-messages {
+      height: 420px;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .chat-message {
+      background: #1b202a;
+      border: 1px solid #292d37;
+      border-radius: 12px;
+      padding: 13px 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .chat-message strong {
+      color: #ff6b2c;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .chat-message p {
+      color: #f7f7fa;
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+    .chat-message time {
+      display: block;
+      color: #a5a8b3;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .chat-login,
+    .chat-composer {
+      padding: 20px;
+      border-top: 1px solid #292d37;
+      display: grid;
+      gap: 12px;
+    }
+
+    .chat-login input,
+    .chat-composer input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #383e4b;
+      border-radius: 9px;
+      background: #08090c;
+      color: #f7f7fa;
+      font: inherit;
+    }
+
+    .chat-login button,
+    .chat-composer button {
+      padding: 13px 18px;
+      background: #ff6b2c;
+      color: #08090c;
+      border: 0;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .chat-login button:disabled,
+    .chat-composer button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .chat-login button.secondary {
+      background: #292d37;
+      color: #f7f7fa;
+      border: 1px solid #383e4b;
+    }
+
+    .chat-status {
+      color: #ffb28e;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .chat-note {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .chat-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .chat-topbar a {
+      color: #ff6b2c;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .chat-page {
+        margin-top: 80px;
+        padding: 14px;
+      }
+
+      .chat-messages {
+        height: 55vh;
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="chat-page">
+
+    <div class="chat-topbar">
+      <a href="index.html">← Back to Home</a>
+      <span>UET Taxila · Student Community</span>
+    </div>
+
+    <section class="chat-panel">
+
+      <header class="chat-heading">
+        <h1>Class Live Chat</h1>
+        <p>Connect and communicate with your classmates.</p>
+      </header>
+
+      <!-- Chat Messages -->
+      <div
+        id="chatMessages"
+        class="chat-messages"
+        aria-live="polite"
+      >
+        <p class="chat-note">
+          Please log in using your approved student account
+          to view and send class messages.
+        </p>
+      </div>
+
+      <!-- Student Login -->
+      <form id="loginForm" class="chat-login">
+
+        <h2>Student Login</h2>
+
+        <input
+          id="email"
+          type="email"
+          placeholder="Student email address"
+          autocomplete="username"
+          required
+        >
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button id="loginButton" type="submit">
+          Login
+        </button>
+
+        <p class="chat-note">
+          Don't have an account yet? Create your student account below.
+          Your account must be approved by the class administrator
+          before you can access the chat.
+        </p>
+
+        <button
+          id="showRegisterButton"
+          class="secondary"
+          type="button"
+        >
+          Create Student Account
+        </button>
+
+        <p
+          id="loginStatus"
+          class="chat-status"
+          role="status"
+        ></p>
+
+      </form>
+
+      <!-- Student Registration -->
+      <form
+        id="registerForm"
+        class="chat-login"
+        hidden
+      >
+
+        <h2>Create Student Account</h2>
+
+        <p class="chat-note">
+          Register with your real name and email address.
+          The administrator must approve your account before
+          you can use the class chat.
+        </p>
+
+        <input
+          id="studentName"
+          type="text"
+          placeholder="Your full name"
+          autocomplete="name"
+          maxlength="60"
+          required
+        >
+
+        <input
+          id="registerEmail"
+          type="email"
+          placeholder="Your email address"
+          autocomplete="email"
+          required
+        >
+
+        <input
+          id="registerPassword"
+          type="password"
+          placeholder="Create a password (minimum 6 characters)"
+          autocomplete="new-password"
+          minlength="6"
+          required
+        >
+
+        <button
+          id="registerButton"
+          type="submit"
+        >
+          Register Account
+        </button>
+
+        <button
+          id="cancelRegisterButton"
+          class="secondary"
+          type="button"
+        >
+          Back to Login
+        </button>
+
+        <p
+          id="registerStatus"
+          class="chat-status"
+          role="status"
+        ></p>
+
+      </form>
+
+      <!-- Approved Student Chat -->
+      <form
+        id="messageForm"
+        class="chat-composer"
+        hidden
+      >
+
+        <p id="signedInAs" class="chat-note"></p>
+
+        <input
+          id="messageInput"
+          type="text"
+          maxlength="1000"
+          placeholder="Write a message..."
+          autocomplete="off"
+          required
+        >
+
+        <button
+          id="sendButton"
+          type="submit"
+        >
+          Send Message
+        </button>
+
+        <button
+          id="logoutButton"
+          type="button"
+        >
+          Log Out
+        </button>
+
+        <p
+          id="messageStatus"
+          class="chat-status"
+          role="status"
+        ></p>
+
+      </form>
+
+    </section>
+
+    <p class="chat-note" style="margin-top: 16px;">
+      Student project — not an official UET Taxila communication service.
+      Be respectful and do not share passwords or private information
+      in the group chat.
+    </p>
+
+    <p class="chat-note" style="text-align: center; margin-top: 20px;">
+      Designed by MUHAMMAD HUSSNAIN AKRAM (MH)
+    </p>
+
+  </main>
+
+  <script type="module" src="js/chat.js"></script>
+
+</body>
+</html>
+```
