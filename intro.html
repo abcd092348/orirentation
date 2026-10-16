@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Journey Begins | Robotics & AI</title>
+
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+
+<body class="intro-body">
+
+  <main class="intro-page">
+
+    <header class="intro-header">
+      <a class="intro-brand" href="index.html">
+        <span class="brand-symbol">M</span>
+        <span>ORIENTATION EXPERIENCE</span>
+      </a>
+
+      <a class="skip-link" href="orientation.html">
+        SKIP INTRO ↗
+      </a>
+    </header>
+
+    <section class="intro-stage">
+
+      <div class="intro-visual">
+        <div class="visual-ring ring-one"></div>
+        <div class="visual-ring ring-two"></div>
+
+        <img
+          id="introImage"
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"
+          alt="A modern humanoid robot representing future technology"
+        >
+
+        <div class="visual-caption">
+          <span class="status-dot"></span>
+          EXPLORING THE FUTURE
+        </div>
+      </div>
+
+      <div class="intro-copy">
+
+        <p class="eyebrow" id="introEyebrow">
+          CHAPTER 01 / THE BEGINNING
+        </p>
+
+        <h1 id="introTitle">
+          THE FUTURE<br>
+          IS <span>INTELLIGENT.</span>
+        </h1>
+
+        <p id="introDescription">
+          Welcome to a world where technology is more than a tool.
+          It is a way to solve problems, explore possibilities,
+          and create a better future.
+        </p>
+
+        <div class="intro-progress" aria-label="Introduction progress">
+          <span class="progress-line active"></span>
+          <span class="progress-line"></span>
+          <span class="progress-line"></span>
+        </div>
+
+        <div class="intro-controls">
+          <button
+            class="button-outline"
+            id="backButton"
+            type="button"
+            disabled
+          >
+            ← BACK
+          </button>
+
+          <button
+            class="button-primary"
+            id="nextButton"
+            type="button"
+          >
+            CONTINUE <span>→</span>
+          </button>
+        </div>
+
+        <p class="intro-credit">
+          AN EXPERIENCE BY MUHAMMAD USMAN AKRAM
+        </p>
+
+      </div>
+
+    </section>
+
+    <footer class="intro-footer">
+      <span>ROBOTICS × ARTIFICIAL INTELLIGENCE</span>
+      <span id="slideCounter">01 / 03</span>
+    </footer>
+
+  </main>
+
+  <audio id="introAudio" preload="none" loop>
+    <source src="assets/sound.mp3" type="audio/mpeg">
+  </audio>
+
+  <button
+    id="soundToggle"
+    class="sound-toggle"
+    type="button"
+    aria-pressed="false"
+  >
+    SOUND: OFF
+  </button>
+
+  <script src="js/intro.js"></script>
+
+</body>
+</html>
