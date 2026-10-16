@@ -1,144 +1,191 @@
+
+/* ========================================
+   UET TAXILA — INTRODUCTION PAGE
+   Designed by Muhammad Hussnain Akram (MH) (O)
+======================================== */
+
 .intro-body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 20% 50%, #111a28 0, transparent 42%),
-    var(--bg);
+  background: var(--bg, #08090c);
+  color: var(--white, #f7f7fa);
 }
 
 .intro-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-  padding: 25px 6%;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.intro-header,
-.intro-footer {
+/* HEADER */
+
+.intro-header {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 90px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  border-bottom: 1px solid var(--border, #292d37);
 }
 
 .intro-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 11px;
+  gap: 14px;
+  color: var(--white, #f7f7fa);
+  text-decoration: none;
+}
+
+.uet-logo {
+  width: 54px;
+  height: 54px;
+  padding: 4px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.intro-brand > span {
+  display: block;
+  font-size: 13px;
   font-weight: 900;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
+}
+
+.intro-brand small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted, #a5a8b3);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
 }
 
 .skip-link {
-  color: var(--muted);
+  color: var(--muted, #a5a8b3);
   font-size: 10px;
+  font-weight: 800;
   letter-spacing: 1.5px;
-  transition: color 0.2s;
+  text-decoration: none;
 }
 
 .skip-link:hover {
-  color: var(--orange);
+  color: var(--orange, #ff6b2c);
 }
 
+/* INTRODUCTION STAGE */
+
 .intro-stage {
-  flex: 1;
+  width: min(1200px, calc(100% - 48px));
+  min-height: 620px;
+  margin: auto;
+  padding: 65px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 7%;
-  width: min(100%, 1250px);
-  margin: 30px auto;
+  gap: 65px;
 }
 
 .intro-visual {
   position: relative;
+  min-height: 480px;
+  overflow: hidden;
   display: grid;
   place-items: center;
-  min-height: 470px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle, rgba(83, 228, 245, 0.13), transparent 60%),
-    #0c1119;
+  background: #111722;
+  border: 1px solid var(--border, #292d37);
+  border-radius: 18px;
 }
 
-.intro-visual img {
-  position: relative;
-  z-index: 2;
+.intro-visual > img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 470px;
+  height: 100%;
   object-fit: cover;
   opacity: 0.85;
-  mask-image: linear-gradient(to bottom, black 70%, transparent);
-  transition: opacity 0.3s;
 }
 
 .intro-visual::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 3;
-  pointer-events: none;
   background: linear-gradient(
-    0deg,
-    rgba(8, 9, 12, 0.75),
-    transparent 55%
+    180deg,
+    rgba(8, 9, 12, 0.05),
+    rgba(8, 9, 12, 0.1) 45%,
+    rgba(8, 9, 12, 0.8)
   );
+  pointer-events: none;
 }
 
 .visual-ring {
   position: absolute;
   z-index: 1;
-  width: 360px;
-  height: 360px;
-  border: 1px solid rgba(83, 228, 245, 0.2);
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(83, 228, 245, 0.35);
   border-radius: 50%;
-  animation: rotateRing 20s linear infinite;
+  pointer-events: none;
+}
+
+.ring-one {
+  transform: scale(1.2);
 }
 
 .ring-two {
-  width: 280px;
-  height: 280px;
-  border-color: rgba(255, 107, 44, 0.3);
-  animation-direction: reverse;
+  transform: scale(1.55);
+  border-color: rgba(255, 107, 44, 0.2);
 }
 
 .visual-caption {
   position: absolute;
-  z-index: 4;
+  z-index: 2;
   bottom: 25px;
   left: 25px;
-  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
+
+/* INTRO COPY */
 
 .intro-copy {
-  animation: introFade 0.5s ease;
+  max-width: 560px;
 }
 
-.intro-copy .eyebrow {
-  margin-bottom: 24px;
+.eyebrow {
+  color: var(--cyan, #53e4f5);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.8;
 }
 
 .intro-copy h1 {
-  font-size: clamp(38px, 5vw, 65px);
-  line-height: 1.05;
+  margin-top: 22px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.06;
   letter-spacing: -2px;
 }
 
 .intro-copy h1 span {
-  color: var(--orange);
+  color: var(--orange, #ff6b2c);
 }
 
-.intro-copy > p:not(.eyebrow):not(.intro-credit) {
+#introDescription {
+  max-width: 500px;
   margin-top: 22px;
-  color: var(--muted);
-  font-size: 15px;
+  color: var(--muted, #a5a8b3);
+  font-size: 14px;
   line-height: 1.9;
 }
+
+/* SLIDE PROGRESS */
 
 .intro-progress {
   display: flex;
@@ -147,25 +194,33 @@
 }
 
 .progress-line {
-  width: 48px;
+  width: 42px;
   height: 3px;
-  background: #303541;
-  transition: background 0.3s;
+  background: #333844;
+  border-radius: 4px;
 }
 
 .progress-line.active {
-  background: var(--orange);
+  background: var(--orange, #ff6b2c);
 }
+
+/* NAVIGATION BUTTONS */
 
 .intro-controls {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  margin-top: 30px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
 }
 
 .intro-controls button {
+  min-height: 48px;
+  padding: 0 20px;
   cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
 }
 
 .intro-controls button:disabled {
@@ -173,101 +228,248 @@
   cursor: not-allowed;
 }
 
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 22px;
+  color: #ffffff;
+  background: var(--orange, #ff6b2c);
+  border: 1px solid var(--orange, #ff6b2c);
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.button-primary:hover {
+  background: #e9571c;
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 22px;
+  color: var(--white, #f7f7fa);
+  background: transparent;
+  border: 1px solid var(--border, #292d37);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.button-outline:hover {
+  border-color: var(--cyan, #53e4f5);
+}
+
 .intro-credit {
-  margin-top: 32px;
-  color: #777e8c;
+  margin-top: 28px;
+  color: var(--muted, #a5a8b3);
   font-size: 9px;
+  line-height: 1.8;
   letter-spacing: 1.5px;
 }
 
-.intro-footer {
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  color: #7e8491;
-  font-size: 9px;
+/* UET UNIVERSITY INTRODUCTION */
+
+.uet-introduction {
+  width: min(1100px, calc(100% - 48px));
+  margin: 20px auto 65px;
+  padding: 45px;
+  background: linear-gradient(
+    145deg,
+    #141b27,
+    #090c12
+  );
+  border: 1px solid var(--border, #292d37);
+  border-radius: 20px;
+}
+
+.uet-intro-heading {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.uet-intro-heading h2 {
+  margin-top: 14px;
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.uet-intro-heading h2 span {
+  display: block;
+  margin-top: 8px;
+  color: var(--orange, #ff6b2c);
+}
+
+.uet-intro-heading > p:not(.eyebrow) {
+  margin-top: 18px;
+  color: var(--muted, #a5a8b3);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.uet-intro-heading .student-name {
+  color: var(--cyan, #53e4f5);
+  font-size: 11px;
+  font-weight: 900;
   letter-spacing: 1.5px;
 }
+
+.uet-intro-heading .degree-name {
+  color: var(--white, #f7f7fa);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* VIDEO */
+
+.uet-video-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.video-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.uet-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid var(--border, #292d37);
+  border-radius: 12px;
+}
+
+.uet-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-note {
+  margin-top: 14px;
+  color: var(--muted, #a5a8b3);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+.intro-footer {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 65px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid var(--border, #292d37);
+  color: var(--muted, #a5a8b3);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+/* SOUND BUTTON */
 
 .sound-toggle {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
   z-index: 10;
-  padding: 10px 13px;
-  color: var(--muted);
-  background: #11151d;
-  border: 1px solid var(--border);
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 15px;
+  color: var(--white, #f7f7fa);
+  background: #141923;
+  border: 1px solid var(--border, #292d37);
   border-radius: 5px;
   font-size: 9px;
+  font-weight: 800;
   letter-spacing: 1px;
   cursor: pointer;
 }
 
 .sound-toggle:hover {
-  color: var(--cyan);
-  border-color: var(--cyan);
+  border-color: var(--orange, #ff6b2c);
 }
 
-@keyframes rotateRing {
-  to { transform: rotate(360deg); }
-}
+/* RESPONSIVE DESIGN */
 
-@keyframes introFade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .intro-stage {
     grid-template-columns: 1fr;
     gap: 35px;
-    max-width: 650px;
+    padding: 40px 0;
   }
 
   .intro-visual {
-    min-height: 350px;
+    min-height: 400px;
   }
 
-  .intro-visual img {
-    height: 350px;
+  .intro-copy {
+    max-width: none;
   }
 
-  .intro-copy h1 {
-    font-size: clamp(36px, 8vw, 56px);
+  .uet-introduction {
+    padding: 32px 24px;
   }
 }
 
-@media (max-width: 550px) {
-  .intro-page {
-    padding: 20px;
+@media (max-width: 600px) {
+  .intro-header {
+    width: calc(100% - 32px);
+    min-height: 76px;
   }
 
-  .intro-brand {
-    font-size: 9px;
+  .uet-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .intro-brand > span {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+
+  .intro-brand small {
+    max-width: 190px;
+    font-size: 7px;
+    line-height: 1.6;
+  }
+
+  .skip-link {
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+
+  .intro-stage {
+    width: calc(100% - 32px);
+    padding: 30px 0;
   }
 
   .intro-visual {
-    min-height: 270px;
+    min-height: 320px;
   }
 
-  .intro-visual img {
-    height: 270px;
-  }
-
-  .visual-ring {
-    width: 240px;
-    height: 240px;
-  }
-
-  .ring-two {
-    width: 190px;
-    height: 190px;
+  .intro-copy h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
   }
 
   .intro-controls {
@@ -275,11 +477,23 @@
   }
 
   .intro-controls button {
-    padding: 12px;
+    padding: 14px;
+  }
+
+  .uet-introduction {
+    width: calc(100% - 32px);
+    margin-bottom: 35px;
+    padding: 25px 16px;
+  }
+
+  .uet-intro-heading h2 {
+    letter-spacing: -0.5px;
   }
 
   .intro-footer {
+    width: calc(100% - 32px);
     font-size: 8px;
+    letter-spacing: 0.5px;
   }
 
   .sound-toggle {
