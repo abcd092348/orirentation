@@ -5,13 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>UET Taxila | Robotics & AI Introduction</title>
+  <title>UET Taxila | Robotics &amp; Artificial Intelligence</title>
 
   <meta
     name="description"
-    content="Introduction to UET Taxila, Robotics and Artificial Intelligence."
+    content="Explore UET Taxila, Robotics and Artificial Intelligence, university life, and the future of technology."
   >
 
+  <meta name="theme-color" content="#080b14">
+
+  <!-- Introduction page styles -->
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/intro.css">
 </head>
@@ -22,47 +25,54 @@
 
     <!-- HEADER -->
     <header class="intro-header">
-      <a class="intro-brand" href="index.html">
 
+      <a
+        class="intro-brand"
+        href="index.html"
+        aria-label="Return to the homepage"
+      >
         <img
           class="uet-logo"
           src="assets/uet-logo.png"
-          alt="UET Taxila Logo"
+          alt="UET Taxila logo"
+          onerror="this.style.display='none'"
         >
 
         <span>
           UET TAXILA
           <small>UNIVERSITY OF ENGINEERING AND TECHNOLOGY</small>
         </span>
-
       </a>
 
       <a class="skip-link" href="orientation.html">
         SKIP INTRO ↗
       </a>
+
     </header>
 
     <!-- INTRODUCTION SLIDES -->
-    <section class="intro-stage">
+    <section class="intro-stage" aria-label="Technology introduction">
 
+      <!-- VISUAL -->
       <div class="intro-visual">
 
-        <div class="visual-ring ring-one"></div>
-        <div class="visual-ring ring-two"></div>
+        <div class="visual-ring ring-one" aria-hidden="true"></div>
+        <div class="visual-ring ring-two" aria-hidden="true"></div>
 
         <img
           id="introImage"
-          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"
-          alt="Humanoid robot representing future technology"
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+          alt="Robot representing future technology"
         >
 
         <div class="visual-caption">
-          <span class="status-dot"></span>
+          <span class="status-dot" aria-hidden="true"></span>
           EXPLORING THE FUTURE
         </div>
 
       </div>
 
+      <!-- SLIDE CONTENT -->
       <div class="intro-copy">
 
         <p class="eyebrow" id="introEyebrow">
@@ -80,12 +90,19 @@
           and create a better future.
         </p>
 
-        <div class="intro-progress" aria-label="Introduction progress">
+        <!-- SLIDE PROGRESS -->
+        <div
+          class="intro-progress"
+          id="introProgress"
+          role="group"
+          aria-label="Introduction progress"
+        >
           <span class="progress-line active"></span>
           <span class="progress-line"></span>
           <span class="progress-line"></span>
         </div>
 
+        <!-- NAVIGATION BUTTONS -->
         <div class="intro-controls">
 
           <button
@@ -102,43 +119,47 @@
             id="nextButton"
             type="button"
           >
-            CONTINUE <span>→</span>
+            CONTINUE <span aria-hidden="true">→</span>
           </button>
 
         </div>
 
+        <!-- DESIGNER CREDIT -->
         <p class="intro-credit">
-          DESIGNED BY MUHAMMAD HUSSNAIN AKRAM (MH) (O)
+          DESIGNED BY MUHAMMAD HUSSNAIN AKRAM (MH)
         </p>
 
       </div>
 
     </section>
 
-    <!-- UET TAXILA INTRODUCTION -->
-    <section class="uet-introduction">
+    <!-- UNIVERSITY INTRODUCTION -->
+    <section
+      class="uet-introduction"
+      aria-labelledby="universityTitle"
+    >
 
       <div class="uet-intro-heading">
 
         <p class="eyebrow">OUR UNIVERSITY / OUR FUTURE</p>
 
-        <h2>
+        <h2 id="universityTitle">
           WELCOME TO
           <span>UET TAXILA</span>
         </h2>
 
         <p>
-          We are studying at the University of Engineering and
-          Technology, Taxila, where engineering, technology,
-          creativity, and innovation inspire us to build the future.
+          Welcome to the University of Engineering and Technology,
+          Taxila. This student-created introduction celebrates
+          engineering, technology, creativity, and innovation.
         </p>
 
         <p class="student-name">
-          MUHAMMAD HUSSNAIN AKRAM (MH) (O)
+          MUHAMMAD HUSSNAIN AKRAM (MH)
         </p>
 
         <p class="degree-name">
-          BS ROBOTICS & ARTIFICIAL INTELLIGENCE
+          BS ROBOTICS &amp; ARTIFICIAL INTELLIGENCE
         </p>
 
       </div>
@@ -147,7 +168,7 @@
       <div class="uet-video-container">
 
         <div class="video-heading">
-          <span class="status-dot"></span>
+          <span class="status-dot" aria-hidden="true"></span>
           UNIVERSITY INTRODUCTION
         </div>
 
@@ -155,18 +176,18 @@
 
           <iframe
             src="https://www.youtube-nocookie.com/embed/p1oOwjhCS9U"
-            title="UET Taxila University Introduction"
+            title="UET Taxila university introduction video"
             loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+            allowfullscreen
+          ></iframe>
 
         </div>
 
         <p class="video-note">
-          Discover university life, engineering education,
-          Robotics, Artificial Intelligence, and future opportunities.
+          Discover engineering education, Robotics, Artificial
+          Intelligence, university life, and future opportunities.
         </p>
 
       </div>
@@ -175,26 +196,37 @@
 
     <!-- FOOTER -->
     <footer class="intro-footer">
-      <span>UET TAXILA • ROBOTICS × ARTIFICIAL INTELLIGENCE</span>
-      <span id="slideCounter">01 / 03</span>
+
+      <span>
+        UET TAXILA • ROBOTICS × ARTIFICIAL INTELLIGENCE
+      </span>
+
+      <span id="slideCounter" aria-live="polite">
+        01 / 03
+      </span>
+
     </footer>
 
   </main>
 
-  <!-- OPTIONAL AUDIO -->
+  <!-- OPTIONAL BACKGROUND AUDIO -->
   <audio id="introAudio" preload="none" loop>
     <source src="assets/sound.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
   </audio>
 
+  <!-- SOUND CONTROL -->
   <button
     id="soundToggle"
     class="sound-toggle"
     type="button"
     aria-pressed="false"
+    aria-label="Turn background sound on or off"
   >
     SOUND: OFF
   </button>
 
+  <!-- Introduction JavaScript -->
   <script src="js/intro.js"></script>
 
 </body>
