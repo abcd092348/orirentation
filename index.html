@@ -1,94 +1,344 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>UET Taxila | Robotics & AI Orientation</title>
+    <title>UET Taxila | Orientation Experience</title>
 
-  <meta
-    name="description"
-    content="Explore Robotics and Artificial Intelligence at the University of Engineering and Technology, Taxila."
-  >
+    <meta
+        name="description"
+        content="A student orientation experience for BS Robotics and Artificial Intelligence at UET Taxila."
+    >
 
-  <link rel="stylesheet" href="css/shared.css">
-  <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/intro.css">
 </head>
 
-<body class="welcome-body">
+<body>
 
-  <main class="welcome-screen">
+    <!-- Background effects -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-    <div class="welcome-background"></div>
-    <div class="welcome-grid"></div>
+    <!-- Header -->
+    <header class="intro-header">
+        <a class="brand" href="index.html">
 
-    <nav class="welcome-nav">
+            <!-- Save the official UET logo as assets/uet-logo.png -->
+            <img
+                class="university-logo"
+                src="assets/uet-logo.png"
+                alt="UET Taxila official logo"
+            >
 
-      <a class="brand" href="index.html">
-        <span class="brand-symbol">MH</span>
+            <span class="brand-text">
+                <strong>UET TAXILA</strong>
+                <small>STUDENT ORIENTATION</small>
+            </span>
 
-        <span>
-          UET TAXILA
-          <small>ROBOTICS & AI</small>
-        </span>
-      </a>
+        </a>
 
-      <span class="nav-status">
-        <span class="status-dot"></span>
-        A NEW JOURNEY BEGINS
-      </span>
+        <div class="header-tag">
+            <span class="status-dot"></span>
+            YOUR JOURNEY STARTS HERE
+        </div>
+    </header>
 
-    </nav>
 
-    <section class="welcome-content">
+    <!-- Main introduction -->
+    <main class="intro-container">
 
-      <p class="eyebrow">
-        UNIVERSITY OF ENGINEERING AND TECHNOLOGY
-      </p>
+        <section class="intro-heading">
+            <p class="eyebrow">WELCOME TO YOUR NEXT CHAPTER</p>
 
-      <h1>
-        THINK BEYOND.<br>
-        <span>BUILD THE FUTURE.</span>
-      </h1>
+            <h1>
+                YOUR FUTURE.
+                <span>YOUR INNOVATION.</span>
+            </h1>
 
-      <p class="welcome-description">
-        Welcome to UET Taxila, where engineering,
-        Robotics and Artificial Intelligence meet creativity
-        and innovation. Begin your journey into the technology
-        that is shaping tomorrow.
-      </p>
+            <p class="intro-description">
+                Discover your university, explore your possibilities,
+                and get ready to shape the future through Robotics
+                and Artificial Intelligence.
+            </p>
+        </section>
 
-      <a
-        class="start-button"
-        id="startButton"
-        href="intro.html"
-      >
-        <span>LET'S GET STARTED</span>
-        <span class="button-arrow">↗</span>
-      </a>
 
-      <div class="welcome-meta">
-        <span>UET TAXILA</span>
-        <span class="meta-separator">/</span>
-        <span>ROBOTICS</span>
-        <span class="meta-separator">/</span>
-        <span>ARTIFICIAL INTELLIGENCE</span>
-      </div>
+        <!-- Introduction slides -->
+        <section class="slides-card" aria-label="Orientation introduction">
 
-    </section>
+            <div class="slide-progress">
+                <span class="progress-segment active"></span>
+                <span class="progress-segment"></span>
+                <span class="progress-segment"></span>
+            </div>
 
-    <div class="welcome-bottom">
-      <span>
-        DESIGNED BY MUHAMMAD HUSSNAIN AKRAM (MH) (O)
-      </span>
 
-      <span>01 — BEGIN YOUR JOURNEY</span>
-    </div>
+            <!-- Slide 1 -->
+            <article class="intro-slide active" data-slide="0">
 
-  </main>
+                <div class="slide-number">01 / 03</div>
 
-  <script src="js/welcome.js"></script>
+                <div class="slide-content">
+                    <div class="slide-icon" aria-hidden="true">✦</div>
+
+                    <p class="slide-label">THE BEGINNING</p>
+
+                    <h2>Welcome to UET Taxila</h2>
+
+                    <p>
+                        Begin a new chapter filled with learning,
+                        discovery, friendships, and opportunities.
+                        Your university experience starts with
+                        curiosity and grows through action.
+                    </p>
+
+                    <div class="feature-list">
+                        <span>Explore</span>
+                        <span>Learn</span>
+                        <span>Innovate</span>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- Slide 2 -->
+            <article class="intro-slide" data-slide="1">
+
+                <div class="slide-number">02 / 03</div>
+
+                <div class="slide-content">
+                    <div class="slide-icon" aria-hidden="true">⌘</div>
+
+                    <p class="slide-label">YOUR FIELD OF DISCOVERY</p>
+
+                    <h2>Robotics & Artificial Intelligence</h2>
+
+                    <p>
+                        Explore intelligent machines, programming,
+                        automation, computer vision, and the
+                        technologies transforming our world.
+                        Build your knowledge one step at a time.
+                    </p>
+
+                    <div class="feature-list">
+                        <span>Robotics</span>
+                        <span>AI</span>
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- Slide 3 -->
+            <article class="intro-slide" data-slide="2">
+
+                <div class="slide-number">03 / 03</div>
+
+                <div class="slide-content">
+                    <div class="slide-icon" aria-hidden="true">↗</div>
+
+                    <p class="slide-label">THE FUTURE IS YOURS</p>
+
+                    <h2>Think Beyond Limits</h2>
+
+                    <p>
+                        Ask questions, collaborate with others,
+                        develop practical skills, and turn your
+                        ideas into meaningful projects. Your
+                        journey is what you make of it.
+                    </p>
+
+                    <div class="feature-list">
+                        <span>Build Skills</span>
+                        <span>Create Projects</span>
+                        <span>Shape Tomorrow</span>
+                    </div>
+                </div>
+
+            </article>
+
+
+            <!-- Navigation -->
+            <div class="slide-navigation">
+
+                <button
+                    type="button"
+                    class="nav-button back-button"
+                    id="backButton"
+                    disabled
+                >
+                    ← BACK
+                </button>
+
+                <div class="slide-counter" id="slideCounter">
+                    01 <span>/</span> 03
+                </div>
+
+                <button
+                    type="button"
+                    class="nav-button continue-button"
+                    id="continueButton"
+                >
+                    CONTINUE →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- University video -->
+        <section class="video-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">GET TO KNOW YOUR UNIVERSITY</p>
+                <h2>Discover the <span>UET Experience</span></h2>
+
+                <p>
+                    Take a closer look at university life,
+                    campus experiences, and your academic journey.
+                </p>
+            </div>
+
+            <div class="video-frame">
+
+                <video
+                    id="universityVideo"
+                    class="university-video"
+                    controls
+                    muted
+                    autoplay
+                    playsinline
+                    preload="metadata"
+                    poster="assets/campus-poster.jpg"
+                >
+                    <source
+                        src="assets/uet-intro.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support HTML video.
+                </video>
+
+                <p class="video-note">
+                    Add your university introduction video as
+                    <strong>assets/uet-intro.mp4</strong>.
+                    Autoplay may be restricted by your browser.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Finish -->
+        <section class="finish-section">
+
+            <p class="eyebrow">READY TO BEGIN?</p>
+
+            <h2>Your journey starts <span>now.</span></h2>
+
+            <p>
+                Continue to your student orientation hub
+                and start exploring your new academic world.
+            </p>
+
+            <a class="start-button" href="orientation.html">
+                LET'S GET STARTED <span>→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="intro-footer">
+        <p>
+            STUDENT ORIENTATION EXPERIENCE
+            <span>•</span>
+            UET TAXILA
+        </p>
+
+        <p class="designer-credit">
+            Designed by MUHAMMAD HUSSNAIN AKRAM (MH) (O)
+        </p>
+
+        <p class="disclaimer">
+            An independent student project. Not an official
+            university website.
+        </p>
+    </footer>
+
+
+    <!-- Slide navigation -->
+    <script>
+        const slides = document.querySelectorAll(".intro-slide");
+        const progressSegments =
+            document.querySelectorAll(".progress-segment");
+
+        const backButton = document.getElementById("backButton");
+        const continueButton =
+            document.getElementById("continueButton");
+
+        const slideCounter = document.getElementById("slideCounter");
+
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            currentSlide = Math.max(
+                0,
+                Math.min(index, slides.length - 1)
+            );
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === currentSlide);
+            });
+
+            progressSegments.forEach((segment, i) => {
+                segment.classList.toggle(
+                    "active",
+                    i <= currentSlide
+                );
+            });
+
+            slideCounter.innerHTML =
+                String(currentSlide + 1).padStart(2, "0") +
+                " <span>/</span> " +
+                String(slides.length).padStart(2, "0");
+
+            backButton.disabled = currentSlide === 0;
+
+            if (currentSlide === slides.length - 1) {
+                continueButton.textContent = "EXPLORE UET ↓";
+            } else {
+                continueButton.textContent = "CONTINUE →";
+            }
+        }
+
+        backButton.addEventListener("click", () => {
+            showSlide(currentSlide - 1);
+        });
+
+        continueButton.addEventListener("click", () => {
+            if (currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            } else {
+                document.querySelector(".video-section")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+            }
+        });
+
+        showSlide(0);
+    </script>
 
 </body>
 </html>
+```
