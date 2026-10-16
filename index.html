@@ -1,127 +1,1405 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="A student-created orientation website introducing the BS Robotics and Artificial Intelligence programme at UET Taxila.">
+/* =========================================================
+   UET TAXILA ORIENTATION WEBSITE
+   Designed by MUHAMMAD HUSSNAIN AKRAM (MH)
+   Futuristic University | AI | Robotics | Next-Gen Experience
+========================================================= */
 
-    <meta name="author" content="MUHAMMAD HUSSNAIN AKRAM (MH)">
+:root {
+  --bg: #070b16;
+  --bg-soft: #0d1425;
+  --card: rgba(18, 29, 51, 0.78);
+  --orange: #ff793f;
+  --orange-light: #ffad70;
+  --cyan: #52e5ff;
+  --purple: #9a7bff;
+  --white: #f7f9ff;
+  --muted: #aab5ca;
+  --border: rgba(255, 255, 255, 0.12);
+  --max-width: 1200px;
+}
 
-    <title>UET Taxila | Robotics & Artificial Intelligence Orientation</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" href="css/main.css">
-</head>
+html {
+  scroll-padding-top: 90px;
+}
 
-<body>
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-    <!-- Navigation -->
-    <header class="site-header">
-        <nav class="navbar container" aria-label="Main navigation">
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(82, 229, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 90% 35%, rgba(154, 123, 255, 0.09), transparent 28%),
+    radial-gradient(circle at 50% 90%, rgba(255, 121, 63, 0.06), transparent 32%);
+}
 
-            <a href="index.html" class="brand">
-                <span class="brand-mark">UET</span>
-                <span class="brand-text">
-                    <strong>UET TAXILA</strong>
-                    <small>STUDENT ORIENTATION</small>
-                </span>
-            </a>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-            <button class="menu-toggle"
-                    id="menuToggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-            <div class="nav-links" id="navLinks">
-                <a href="index.html" class="active">Home</a>
-                <a href="intro.html">Introduction</a>
-                <a href="program.html">Programme</a>
-                <a href="campus.html">Campus Guide</a>
-            </div>
+button {
+  font: inherit;
+}
 
-        </nav>
-    </header>
+img {
+  display: block;
+  max-width: 100%;
+}
 
-    <main>
+section {
+  position: relative;
+  padding: 105px 6%;
+  scroll-margin-top: 78px;
+}
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-grid"></div>
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 
-            <div class="container hero-content">
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
 
-                <div class="hero-copy">
-                    <p class="eyebrow">
-                        YOUR UNIVERSITY JOURNEY STARTS HERE
-                    </p>
+.section-heading .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
 
-                    <h1>
-                        Explore the Future of
-                        <span>Robotics & AI.</span>
-                    </h1>
+.section-heading .eyebrow::before,
+.section-heading .eyebrow::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--orange);
+}
 
-                    <p class="hero-description">
-                        Discover the foundations of intelligent technology,
-                        explore your academic journey, and prepare for an
-                        exciting future in Robotics and Artificial Intelligence
-                        at UET Taxila.
-                    </p>
+.section-heading h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.16;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
 
-                    <div class="hero-actions">
-                        <a href="intro.html" class="btn btn-primary">
-                            Begin Orientation
-                            <span aria-hidden="true">→</span>
-                        </a>
+.section-heading h2 span {
+  color: var(--orange);
+}
 
-                        <a href="program.html" class="btn btn-secondary">
-                            Explore Programme
-                        </a>
-                    </div>
+.section-heading p {
+  color: var(--muted);
+  font-size: 1rem;
+}
 
-                    <div class="hero-note">
-                        <span class="status-dot"></span>
-                        A student-created educational orientation project
-                    </div>
-                </div>
+.gradient-text {
+  background: linear-gradient(100deg, var(--cyan), #b3a0ff 55%, var(--orange-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-                <div class="hero-visual" aria-label="Technology illustration">
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
+.section-tag {
+  display: inline-block;
+  padding: 7px 13px;
+  border: 1px solid rgba(82, 229, 255, 0.25);
+  border-radius: 30px;
+  color: var(--cyan);
+  background: rgba(82, 229, 255, 0.06);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-                    <div class="tech-card tech-card-top">
-                        <span class="tech-symbol">AI</span>
-                        <span>Artificial Intelligence</span>
-                    </div>
+/* =========================
+   HEADER & NAVIGATION
+========================= */
 
-                    <div class="tech-core">
-                        <div class="core-inner">
-                            <span class="core-label">FUTURE</span>
-                            <span class="core-title">ROBOTICS</span>
-                            <span class="core-subtitle">INTELLIGENCE · INNOVATION</span>
-                        </div>
-                    </div>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(7, 11, 22, 0.84);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
 
-                    <div class="tech-card tech-card-bottom">
-                        <span class="tech-symbol">01</span>
-                        <span>Build. Learn. Innovate.</span>
-                    </div>
+.navbar {
+  max-width: 1400px;
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 12px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
 
-                    <span class="floating-code code-one">01001</span>
-                    <span class="floating-code code-two">AI / ML</span>
-                    <span class="floating-code code-three">&lt;/&gt;</span>
-                </div>
+.logo,
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+}
 
-            </div>
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 47px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--orange), #ff4d77);
+  box-shadow: 0 0 25px rgba(255, 121, 63, 0.25);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
 
-            <div class="hero-bottom container">
-                <span>LEARN WITH PURPOSE</span>
-                <span class="hero-bottom-line"></span>
-                <span>INNOVATE FOR TOMORROW</span>
-            </div>
-        </section
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.logo-text strong {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.logo-text small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  list-style: none;
+}
+
+.nav-links a {
+  position: relative;
+  color: #d0d8e8;
+  font-size: 0.87rem;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links .nav-cta {
+  padding: 11px 18px;
+  border-radius: 9px;
+  background: linear-gradient(110deg, var(--orange), #ff526e);
+  color: white;
+  box-shadow: 0 5px 22px rgba(255, 121, 63, 0.16);
+}
+
+.nav-links .nav-cta:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* =========================
+   HERO / WELCOME
+========================= */
+
+.hero {
+  min-height: 690px;
+  min-height: min(850px, calc(100svh - 82px));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px 6%;
+  isolation: isolate;
+  background: #080e1c;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/38/UET_Taxila_Gate000.jpg");
+  background-size: cover;
+  background-position: center 48%;
+  transform: scale(1.02);
+  animation: heroReveal 1.2s ease both;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(5, 9, 20, 0.97) 0%, rgba(5, 9, 20, 0.82) 46%, rgba(5, 9, 20, 0.35) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 35%, rgba(5, 9, 20, 0.15) 100%);
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  animation: contentReveal 0.9s ease both;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  margin-bottom: 27px;
+  border: 1px solid rgba(82, 229, 255, 0.35);
+  border-radius: 40px;
+  background: rgba(9, 20, 39, 0.7);
+  color: #d7faff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #54f5bb;
+  box-shadow: 0 0 12px #54f5bb;
+}
+
+.hero h1 {
+  max-width: 900px;
+  font-size: clamp(2.9rem, 7.5vw, 6.2rem);
+  line-height: 1.02;
+  letter-spacing: -3px;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  display: block;
+  margin-top: 10px;
+  color: var(--orange);
+  text-shadow: 0 0 35px rgba(255, 121, 63, 0.2);
+}
+
+.hero-description {
+  max-width: 660px;
+  color: #d0d8e8;
+  font-size: clamp(1rem, 1.5vw, 1.16rem);
+  line-height: 1.9;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 13px 23px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 0.91rem;
+  font-weight: 800;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, var(--orange), #ff536e);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 93, 91, 0.22);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 14px 35px rgba(255, 93, 91, 0.35);
+}
+
+.btn-secondary {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--cyan);
+  background: rgba(82, 229, 255, 0.09);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 45px;
+  color: #c5cee0;
+  font-size: 0.83rem;
+}
+
+.hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero-meta span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px rgba(82, 229, 255, 0.7);
+}
+
+/* =========================
+   ABOUT THE UNIVERSITY
+========================= */
+
+.about-section {
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(82, 229, 255, 0.06), transparent 40%),
+    var(--bg);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.about-visual {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(82, 229, 255, 0.12), transparent 45%),
+    linear-gradient(315deg, rgba(154, 123, 255, 0.16), transparent 55%),
+    #101a2e;
+}
+
+.about-visual::before,
+.about-visual::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(82, 229, 255, 0.22);
+  border-radius: 50%;
+}
+
+.about-visual::before {
+  width: 340px;
+  height: 340px;
+}
+
+.about-visual::after {
+  width: 245px;
+  height: 245px;
+  border-color: rgba(255, 121, 63, 0.35);
+}
+
+.about-orbit {
+  position: absolute;
+  width: 390px;
+  height: 150px;
+  border: 1px solid rgba(154, 123, 255, 0.45);
+  border-radius: 50%;
+  transform: rotate(-35deg);
+}
+
+.about-emblem {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 155px;
+  height: 155px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 38px;
+  background: linear-gradient(145deg, #182b48, #101627);
+  color: var(--cyan);
+  font-size: 2.8rem;
+  font-weight: 900;
+  box-shadow: 0 0 60px rgba(82, 229, 255, 0.13);
+  transform: rotate(-7deg);
+}
+
+.about-floating-card {
+  position: absolute;
+  z-index: 3;
+  right: 22px;
+  bottom: 24px;
+  max-width: 230px;
+  padding: 17px 20px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: rgba(8, 14, 28, 0.86);
+  backdrop-filter: blur(14px);
+}
+
+.about-floating-card strong {
+  display: block;
+  color: var(--orange-light);
+  font-size: 0.9rem;
+}
+
+.about-floating-card span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.about-copy .section-tag {
+  margin-bottom: 20px;
+}
+
+.about-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.15;
+  margin-bottom: 23px;
+  letter-spacing: -1.2px;
+}
+
+.about-copy > p {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.about-points {
+  display: grid;
+  gap: 16px;
+  margin: 27px 0 32px;
+}
+
+.about-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.point-icon {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(82, 229, 255, 0.22);
+  border-radius: 11px;
+  background: rgba(82, 229, 255, 0.08);
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
+.about-point strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.96rem;
+}
+
+.about-point p {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* =========================
+   PROGRAMME CARDS
+========================= */
+
+.programme-section {
+  background:
+    linear-gradient(180deg, rgba(13, 20, 37, 0.2), rgba(13, 20, 37, 0.88)),
+    var(--bg-soft);
+}
+
+.programme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.programme-card {
+  position: relative;
+  min-height: 280px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(26, 39, 65, 0.9), rgba(13, 20, 37, 0.86));
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.programme-card::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -80px;
+  top: -80px;
+  border-radius: 50%;
+  background: var(--card-glow, rgba(82, 229, 255, 0.13));
+  filter: blur(8px);
+  transition: transform 0.4s ease;
+}
+
+.programme-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(82, 229, 255, 0.45);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.programme-card:hover::after {
+  transform: scale(1.5);
+}
+
+.programme-card:nth-child(2) {
+  --card-glow: rgba(154, 123, 255, 0.2);
+}
+
+.programme-card:nth-child(3) {
+  --card-glow: rgba(255, 121, 63, 0.19);
+}
+
+.programme-card:nth-child(4) {
+  --card-glow: rgba(58, 255, 182, 0.15);
+}
+
+.programme-card:nth-child(5) {
+  --card-glow: rgba(82, 229, 255, 0.18);
+}
+
+.programme-card:nth-child(6) {
+  --card-glow: rgba(255, 83, 110, 0.16);
+}
+
+.card-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(82, 229, 255, 0.22);
+  border-radius: 17px;
+  background: rgba(82, 229, 255, 0.08);
+  color: var(--cyan);
+  font-size: 1.6rem;
+}
+
+.programme-card:nth-child(2) .card-icon,
+.programme-card:nth-child(5) .card-icon {
+  border-color: rgba(154, 123, 255, 0.3);
+  background: rgba(154, 123, 255, 0.1);
+  color: #b8a5ff;
+}
+
+.programme-card:nth-child(3) .card-icon,
+.programme-card:nth-child(6) .card-icon {
+  border-color: rgba(255, 121, 63, 0.3);
+  background: rgba(255, 121, 63, 0.1);
+  color: var(--orange-light);
+}
+
+.programme-card h3 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.programme-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  font-size: 0.91rem;
+}
+
+.card-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  color: var(--cyan);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.card-link span {
+  transition: transform 0.2s ease;
+}
+
+.card-link:hover span {
+  transform: translateX(5px);
+}
+
+.programme-note {
+  max-width: 800px;
+  margin: 28px auto 0;
+  color: #929fb7;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+/* =========================
+   FUTURE LAB
+========================= */
+
+.future-lab {
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(154, 123, 255, 0.12), transparent 55%),
+    var(--bg);
+}
+
+.lab-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+  padding: 45px;
+  border: 1px solid rgba(154, 123, 255, 0.25);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(22, 30, 55, 0.95), rgba(10, 15, 29, 0.92));
+  overflow: hidden;
+}
+
+.lab-showcase::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: -130px;
+  top: -170px;
+  border-radius: 50%;
+  background: rgba(82, 229, 255, 0.08);
+  filter: blur(30px);
+}
+
+.lab-copy,
+.lab-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.lab-copy h3 {
+  margin: 20px 0;
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  line-height: 1.17;
+}
+
+.lab-copy p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.lab-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 26px 0 32px;
+}
+
+.lab-feature {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #d8e1f3;
+  font-size: 0.86rem;
+}
+
+.lab-feature span {
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.lab-visual {
+  min-height: 340px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(82, 229, 255, 0.17);
+  border-radius: 22px;
+  background:
+    linear-gradient(rgba(82, 229, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(82, 229, 255, 0.045) 1px, transparent 1px),
+    rgba(4, 10, 22, 0.7);
+  background-size: 25px 25px;
+}
+
+.robot-core {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(82, 229, 255, 0.4);
+  border-radius: 35%;
+  background: linear-gradient(145deg, rgba(82, 229, 255, 0.15), rgba(154, 123, 255, 0.12));
+  color: var(--cyan);
+  font-size: 4.8rem;
+  box-shadow: 0 0 55px rgba(82, 229, 255, 0.12), inset 0 0 35px rgba(82, 229, 255, 0.06);
+  animation: float 5s ease-in-out infinite;
+}
+
+.robot-core::before,
+.robot-core::after {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border: 1px solid rgba(82, 229, 255, 0.28);
+  border-radius: 35%;
+  transform: rotate(25deg);
+}
+
+.robot-core::after {
+  inset: -43px;
+  border-color: rgba(154, 123, 255, 0.25);
+  transform: rotate(55deg);
+}
+
+.lab-chip {
+  position: absolute;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: rgba(10, 17, 33, 0.92);
+  color: #d8e8ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.chip-ai {
+  top: 18%;
+  left: 9%;
+  color: var(--cyan);
+}
+
+.chip-code {
+  top: 20%;
+  right: 8%;
+  color: #c2aaff;
+}
+
+.chip-robotics {
+  bottom: 19%;
+  left: 8%;
+  color: var(--orange-light);
+}
+
+.chip-vision {
+  bottom: 17%;
+  right: 8%;
+  color: #75f4bf;
+}
+
+/* =========================
+   NEXT-GEN EXPERIENCE
+========================= */
+
+.nextgen-section {
+  background: var(--bg-soft);
+}
+
+.nextgen-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.nextgen-card {
+  padding: 27px 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.nextgen-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 121, 63, 0.4);
+  background: rgba(255, 121, 63, 0.045);
+}
+
+.nextgen-number {
+  display: block;
+  margin-bottom: 25px;
+  color: rgba(82, 229, 255, 0.6);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.nextgen-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.06rem;
+}
+
+.nextgen-card p {
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+/* =========================
+   ORIENTATION SECTION
+========================= */
+
+.orientation-section {
+  background:
+    radial-gradient(ellipse at 100% 50%, rgba(255, 121, 63, 0.08), transparent 45%),
+    var(--bg);
+}
+
+.orientation-panel {
+  position: relative;
+  padding: 60px;
+  overflow: hidden;
+  border: 1px solid rgba(82, 229, 255, 0.22);
+  border-radius: 28px;
+  background: linear-gradient(115deg, #121e35, #101326 70%, #1c1830);
+}
+
+.orientation-panel::after {
+  content: "MH";
+  position: absolute;
+  right: 20px;
+  bottom: -100px;
+  color: rgba(255, 255, 255, 0.025);
+  font-size: clamp(12rem, 25vw, 24rem);
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.orientation-content {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+}
+
+.orientation-content h2 {
+  margin: 20px 0;
+  font-size: clamp(2.1rem, 4.5vw, 3.7rem);
+  line-height: 1.13;
+}
+
+.orientation-content p {
+  max-width: 660px;
+  margin-bottom: 28px;
+  color: var(--muted);
+}
+
+.orientation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  padding: 55px 6% 25px;
+  border-top: 1px solid var(--border);
+  background: #050812;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 35px;
+  padding-bottom: 35px;
+}
+
+.footer-brand {
+  max-width: 390px;
+}
+
+.footer-brand p {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.footer-links h4 {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--cyan);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  color: #8995ab;
+  font-size: 0.78rem;
+}
+
+.footer-bottom a {
+  color: #aab5ca;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.designer-credit {
+  color: var(--orange-light);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0.5;
+    transform: scale(1.07);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* =========================
+   RESPONSIVE: TABLETS
+========================= */
+
+@media (max-width: 1050px) {
+  .navbar {
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 0.81rem;
+  }
+
+  .about-grid {
+    gap: 40px;
+  }
+
+  .programme-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nextgen-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lab-showcase {
+    gap: 25px;
+    padding: 32px;
+  }
+}
+
+/* =========================
+   RESPONSIVE: MOBILE MENU
+========================= */
+
+@media (max-width: 800px) {
+  section {
+    padding: 78px 6%;
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 6% 22px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(7, 11, 22, 0.98);
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 13px 4px;
+    font-size: 0.94rem;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links .nav-cta {
+    margin-top: 8px;
+    padding: 12px 15px;
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 700px;
+    min-height: min(780px, calc(100svh - 72px));
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(90deg, rgba(5, 9, 20, 0.93), rgba(5, 9, 20, 0.68)),
+      linear-gradient(0deg, var(--bg), transparent 65%);
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .about-grid,
+  .lab-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    min-height: 350px;
+  }
+
+  .about-copy {
+    order: -1;
+  }
+
+  .lab-visual {
+    min-height: 320px;
+  }
+
+  .orientation-panel {
+    padding: 38px 28px;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================
+   RESPONSIVE: SMALL PHONES
+========================= */
+
+@media (max-width: 520px) {
+  section {
+    padding: 65px 5%;
+  }
+
+  .navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .logo-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .logo-text strong {
+    font-size: 0.88rem;
+  }
+
+  .logo-text small {
+    font-size: 0.59rem;
+    letter-spacing: 1.1px;
+  }
+
+  .hero {
+    min-height: 680px;
+    padding: 65px 5%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.65rem, 13vw, 4rem);
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -0.7px;
+  }
+
+  .programme-grid,
+  .nextgen-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-card {
+    min-height: 240px;
+    padding: 25px;
+  }
+
+  .lab-showcase {
+    padding: 24px 18px;
+  }
+
+  .lab-features {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-visual {
+    min-height: 280px;
+  }
+
+  .robot-core {
+    width: 135px;
+    height: 135px;
+    font-size: 3.6rem;
+  }
+
+  .robot-core::before {
+    inset: -15px;
+  }
+
+  .robot-core::after {
+    inset: -28px;
+  }
+
+  .lab-chip {
+    font-size: 0.65rem;
+    padding: 6px 8px;
+  }
+
+  .about-visual {
+    min-height: 300px;
+  }
+
+  .about-visual::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-visual::after {
+    width: 185px;
+    height: 185px;
+  }
+
+  .about-emblem {
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    font-size: 2.2rem;
+  }
+
+  .about-floating-card {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .orientation-panel {
+    padding: 32px 22px;
+  }
+
+  .orientation-links {
+    flex-direction: column;
+  }
+
+  .orientation-links .btn {
+    width: 100%;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
