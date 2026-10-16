@@ -1,460 +1,472 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student-created UET Taxila orientation guide covering academic preparation, programming fundamentals, university life and learning resources.">
 
-  <title>Robotics & AI | Orientation Experience</title>
+  <title>Student Orientation | UET Taxila Robotics & AI</title>
 
-  <meta
-    name="description"
-    content="An interactive educational introduction to robotics, artificial intelligence, engineering, and student learning."
-  >
-
-  <link rel="stylesheet" href="css/shared.css">
-  <link rel="stylesheet" href="css/orientation.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
   <header class="site-header">
-    <div class="container header-inner">
+    <nav class="navbar" aria-label="Main navigation">
 
-      <a class="site-brand" href="#home">
-        <span class="brand-symbol">M</span>
-        <span>
-          ROBOTICS & AI
-          <small>ORIENTATION EXPERIENCE</small>
+      <a class="logo" href="index.html">
+        <span class="logo-mark">MH</span>
+        <span class="logo-text">
+          <strong>UET TAXILA</strong>
+          <small>STUDENT ORIENTATION</small>
         </span>
       </a>
 
       <button
         class="menu-toggle"
-        id="menuToggle"
         type="button"
+        aria-label="Open navigation menu"
         aria-expanded="false"
-        aria-controls="siteNav"
-      >
-        MENU ☰
-      </button>
+        aria-controls="main-navigation"
+      >☰</button>
 
-      <nav class="site-nav" id="siteNav">
-        <a class="active" href="#home">Home</a>
-        <a href="#overview">Overview</a>
-        <a href="#explore">Explore</a>
-        <a href="#journey">Your Journey</a>
-        <a href="#gallery">Gallery</a>
-      </nav>
+      <ul class="nav-links" id="main-navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#programme">Programme</a></li>
+        <li><a href="index.html#future-lab">Future Lab</a></li>
+        <li><a class="nav-cta" href="#orientation-guide">Orientation Guide ↗</a></li>
+      </ul>
 
-    </div>
+    </nav>
   </header>
 
   <main>
 
-    <!-- HERO -->
+    <!-- WELCOME -->
+    <section class="hero" id="home">
 
-    <section class="hero section" id="home">
-      <div class="container hero-grid">
+      <div
+        class="hero-background"
+        role="img"
+        aria-label="UET Taxila main entrance"
+      ></div>
 
-        <div class="hero-copy reveal">
-          <p class="section-label">WELCOME TO THE FUTURE</p>
+      <div class="hero-content">
 
-          <h1>
-            ENGINEERING<br>
-            <span class="accent">INTELLIGENCE.</span><br>
-            BUILDING TOMORROW.
-          </h1>
-
-          <p class="hero-description">
-            Discover the technologies shaping our world.
-            Explore intelligent systems, robotics, automation,
-            and the ideas that turn imagination into reality.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button-primary" href="#overview">
-              BEGIN EXPLORING ↘
-            </a>
-
-            <a class="button-outline" href="#explore">
-              DISCOVER ROBOTICS
-            </a>
-          </div>
-
-          <div class="hero-facts">
-            <div>
-              <strong>01</strong>
-              <span>THINK</span>
-            </div>
-            <div>
-              <strong>02</strong>
-              <span>BUILD</span>
-            </div>
-            <div>
-              <strong>03</strong>
-              <span>INNOVATE</span>
-            </div>
-          </div>
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          YOUR UNIVERSITY JOURNEY BEGINS
         </div>
 
-        <div class="hero-media reveal">
-          <img
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"
-            alt="Humanoid robot representing robotics and AI"
-            onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
-          >
+        <h1>
+          Start Strong.
+          <span>Think Bigger.</span>
+        </h1>
 
-          <div class="media-fallback" hidden>
-            ROBOTICS / AI
-            <span>IMAGINE THE POSSIBLE</span>
-          </div>
+        <p class="hero-description">
+          University is a new chapter of learning, independence and
+          discovery. Prepare yourself for academic life and begin
+          exploring the exciting world of Robotics and Artificial Intelligence.
+        </p>
 
-          <div class="media-shade"></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#orientation-guide">
+            Start Your Guide ↗
+          </a>
 
-          <div class="media-tag media-tag-top">
-            <span class="status-dot"></span>
-            FUTURE SYSTEMS
-          </div>
-
-          <div class="media-tag media-tag-bottom">
-            <span>INTELLIGENCE</span>
-            <strong>MEETS ENGINEERING</strong>
-          </div>
-
-          <div class="media-index">FIG. 001 — THE FUTURE</div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- OVERVIEW -->
-
-    <section class="section overview-section" id="overview">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <p class="section-label">01 / THE BIG PICTURE</p>
-
-          <h2 class="section-title">
-            TECHNOLOGY IS NOT JUST WHAT WE USE.
-            <span class="accent">IT IS WHAT WE CREATE.</span>
-          </h2>
-
-          <p class="section-description">
-            Robotics and Artificial Intelligence combine computing,
-            electronics, mathematics, and engineering to create systems
-            that can sense, reason, learn, and act.
-          </p>
-        </div>
-
-        <div class="overview-grid">
-
-          <article class="overview-card card reveal">
-            <span class="card-number">01</span>
-            <div class="topic-icon">⌘</div>
-            <h3>Understand</h3>
-            <p>
-              Learn the principles behind computers, algorithms,
-              intelligent systems, and automated machines.
-            </p>
-          </article>
-
-          <article class="overview-card card reveal">
-            <span class="card-number">02</span>
-            <div class="topic-icon cyan-icon">⚙</div>
-            <h3>Experiment</h3>
-            <p>
-              Test ideas through programming, electronic circuits,
-              sensors, simulations, and practical projects.
-            </p>
-          </article>
-
-          <article class="overview-card card reveal">
-            <span class="card-number">03</span>
-            <div class="topic-icon">↗</div>
-            <h3>Create</h3>
-            <p>
-              Combine knowledge and teamwork to develop useful
-              solutions for real-world problems.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EXPLORE TOPICS -->
-
-    <section class="section explore-section" id="explore">
-      <div class="container">
-
-        <div class="section-heading reveal">
-          <p class="section-label">02 / EXPLORE THE FIELD</p>
-
-          <h2 class="section-title">
-            A WORLD OF <span class="accent">POSSIBILITIES.</span>
-          </h2>
-
-          <p class="section-description">
-            Explore some of the important areas that connect robotics,
-            artificial intelligence, and modern engineering.
-          </p>
-        </div>
-
-        <div class="field-grid">
-
-          <article class="field-card reveal">
-            <img
-              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80"
-              alt="Robotic technology"
-              loading="lazy"
-            >
-
-            <div class="field-content">
-              <span class="field-index">FIELD 01</span>
-              <h3>Robotic Systems</h3>
-              <p>
-                Explore robot structures, movement, actuators,
-                control systems, and machine interaction.
-              </p>
-              <a href="#journey">EXPLORE THE FIELD ↗</a>
-            </div>
-          </article>
-
-          <article class="field-card reveal">
-            <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
-              alt="Artificial intelligence concept"
-              loading="lazy"
-            >
-
-            <div class="field-content">
-              <span class="field-index">FIELD 02</span>
-              <h3>Machine Learning</h3>
-              <p>
-                Understand how computers learn patterns from data
-                and use them to make predictions.
-              </p>
-              <a href="#journey">EXPLORE THE FIELD ↗</a>
-            </div>
-          </article>
-
-          <article class="field-card reveal">
-            <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
-              alt="Electronics and embedded technology"
-              loading="lazy"
-            >
-
-            <div class="field-content">
-              <span class="field-index">FIELD 03</span>
-              <h3>Sensors & Embedded Systems</h3>
-              <p>
-                Discover how sensors collect information and
-                electronic systems respond to the environment.
-              </p>
-              <a href="#journey">EXPLORE THE FIELD ↗</a>
-            </div>
-          </article>
-
-          <article class="field-card reveal">
-            <img
-              src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?auto=format&fit=crop&w=900&q=80"
-              alt="Engineering laboratory"
-              loading="lazy"
-            >
-
-            <div class="field-content">
-              <span class="field-index">FIELD 04</span>
-              <h3>Computer Vision</h3>
-              <p>
-                Learn how computer systems process images
-                and extract useful information from visual data.
-              </p>
-              <a href="#journey">EXPLORE THE FIELD ↗</a>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- JOURNEY -->
-
-    <section class="section journey-section" id="journey">
-      <div class="container journey-grid">
-
-        <div class="journey-copy reveal">
-          <p class="section-label">03 / YOUR LEARNING JOURNEY</p>
-
-          <h2 class="section-title">
-            START WITH CURIOSITY.
-            <span class="accent">GROW THROUGH PRACTICE.</span>
-          </h2>
-
-          <p class="section-description">
-            You do not need to know everything on day one.
-            Build your knowledge step by step, learn from mistakes,
-            and keep experimenting.
-          </p>
-
-          <a class="button-primary" href="#gallery">
-            SEE THE INSPIRATION ↘
+          <a class="btn btn-secondary" href="index.html">
+            Back to Homepage
           </a>
         </div>
 
-        <div class="journey-steps">
-
-          <article class="journey-step reveal">
-            <span class="step-number">01</span>
-            <div>
-              <h3>Build Your Foundations</h3>
-              <p>
-                Study programming, mathematics, physics,
-                and the fundamentals of computing.
-              </p>
-            </div>
-          </article>
-
-          <article class="journey-step reveal">
-            <span class="step-number">02</span>
-            <div>
-              <h3>Learn by Doing</h3>
-              <p>
-                Write code, solve exercises, build circuits,
-                and test your ideas with small projects.
-              </p>
-            </div>
-          </article>
-
-          <article class="journey-step reveal">
-            <span class="step-number">03</span>
-            <div>
-              <h3>Collaborate and Improve</h3>
-              <p>
-                Share ideas, ask questions, seek feedback,
-                and learn from other students.
-              </p>
-            </div>
-          </article>
-
-          <article class="journey-step reveal">
-            <span class="step-number">04</span>
-            <div>
-              <h3>Create Something Meaningful</h3>
-              <p>
-                Use your skills to design projects that
-                address real needs and practical challenges.
-              </p>
-            </div>
-          </article>
-
+        <div class="hero-meta">
+          <span>Academic Preparation</span>
+          <span>Programming Skills</span>
+          <span>University Life</span>
         </div>
 
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- ORIENTATION INTRODUCTION -->
+    <section class="about-section" id="orientation-guide">
 
-    <section class="section gallery-section" id="gallery">
       <div class="container">
 
-        <div class="section-heading reveal">
-          <p class="section-label">04 / VISUAL INSPIRATION</p>
+        <div class="section-heading">
+          <span class="eyebrow">YOUR STARTING POINT</span>
 
-          <h2 class="section-title">
-            IDEAS BECOME <span class="accent">REALITY.</span>
+          <h2>
+            Make Your First Semester
+            <span>Count.</span>
           </h2>
 
-          <p class="section-description">
-            Every machine, intelligent system, and engineering
-            breakthrough starts with a question and a first attempt.
+          <p>
+            You do not need to know everything before university begins.
+            Start with the basics, stay curious, ask questions and improve
+            one step at a time.
           </p>
         </div>
 
-        <div class="gallery-grid">
+        <div class="programme-grid">
 
-          <figure class="gallery-item gallery-large reveal">
-            <img
-              src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85"
-              alt="Robotics and future technology"
-              loading="lazy"
-            >
-            <figcaption>
-              <span>01 / ROBOTICS</span>
-              <strong>Machines That Move Us Forward</strong>
-            </figcaption>
-          </figure>
+          <article class="programme-card">
+            <div class="card-icon">01</div>
+            <h3>Understand Your Studies</h3>
+            <p>
+              Keep track of lectures, assignments, laboratory work,
+              deadlines and instructions shared by your teachers.
+            </p>
+            <a class="card-link" href="#academic-preparation">
+              Read study tips <span>→</span>
+            </a>
+          </article>
 
-          <figure class="gallery-item reveal">
-            <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
-              alt="Electronic circuit components"
-              loading="lazy"
-            >
-            <figcaption>
-              <span>02 / ELECTRONICS</span>
-              <strong>The Building Blocks</strong>
-            </figcaption>
-          </figure>
+          <article class="programme-card">
+            <div class="card-icon">02</div>
+            <h3>Build Coding Foundations</h3>
+            <p>
+              Practise basic programming concepts, understand errors
+              and write small programs regularly.
+            </p>
+            <a class="card-link" href="#programming">
+              Explore coding <span>→</span>
+            </a>
+          </article>
 
-          <figure class="gallery-item reveal">
-            <img
-              src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?auto=format&fit=crop&w=900&q=80"
-              alt="Technology engineering workspace"
-              loading="lazy"
-            >
-            <figcaption>
-              <span>03 / ENGINEERING</span>
-              <strong>Design. Test. Improve.</strong>
-            </figcaption>
-          </figure>
+          <article class="programme-card">
+            <div class="card-icon">03</div>
+            <h3>Develop Independence</h3>
+            <p>
+              Organise your time, prepare your materials, look after
+              your belongings and learn to solve everyday problems.
+            </p>
+            <a class="card-link" href="#university-life">
+              Explore student life <span>→</span>
+            </a>
+          </article>
 
         </div>
-
       </div>
     </section>
 
-    <!-- CLOSING -->
+    <!-- ACADEMIC PREPARATION -->
+    <section class="nextgen-section" id="academic-preparation">
 
-    <section class="closing-section">
-      <div class="closing-glow"></div>
+      <div class="container">
 
-      <div class="container closing-content reveal">
-        <p class="section-label">YOUR STORY STARTS NOW</p>
+        <div class="section-heading">
+          <span class="eyebrow">ACADEMIC SUCCESS</span>
 
-        <h2>
-          DON'T JUST WATCH<br>
-          THE FUTURE.
-          <span class="accent">BUILD IT.</span>
-        </h2>
+          <h2>
+            Build Better
+            <span>Study Habits.</span>
+          </h2>
 
-        <p>
-          Stay curious. Keep learning. Turn your ideas into action.
-        </p>
+          <p>
+            Consistent effort and an organised routine can make
+            challenging university subjects easier to manage.
+          </p>
+        </div>
 
-        <a class="button-primary" href="#home">
-          BACK TO THE TOP ↑
-        </a>
+        <div class="nextgen-grid">
 
-        <p class="closing-credit">
-          DESIGNED BY MUHAMMAD USMAN AKRAM
-        </p>
+          <article class="nextgen-card">
+            <span class="nextgen-number">01 / PLAN</span>
+            <h3>Organise Your Week</h3>
+            <p>
+              Make a simple weekly timetable for classes, revision,
+              assignments, rest and personal responsibilities.
+            </p>
+          </article>
+
+          <article class="nextgen-card">
+            <span class="nextgen-number">02 / REVIEW</span>
+            <h3>Revise After Class</h3>
+            <p>
+              Review your notes regularly and write down the concepts
+              you need to understand more clearly.
+            </p>
+          </article>
+
+          <article class="nextgen-card">
+            <span class="nextgen-number">03 / ASK</span>
+            <h3>Ask Questions</h3>
+            <p>
+              Discuss difficult concepts with teachers and classmates.
+              Asking for clarification is part of learning.
+            </p>
+          </article>
+
+          <article class="nextgen-card">
+            <span class="nextgen-number">04 / PRACTISE</span>
+            <h3>Learn by Doing</h3>
+            <p>
+              Practise numerical problems, laboratory exercises
+              and programming tasks instead of only reading notes.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMMING FUNDAMENTALS -->
+    <section class="future-lab" id="programming">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">YOUR TECHNICAL FOUNDATION</span>
+
+          <h2>
+            Begin with
+            <span>Programming.</span>
+          </h2>
+
+          <p>
+            Programming Fundamentals introduces you to logical thinking
+            and the instructions used to solve problems with computers.
+          </p>
+        </div>
+
+        <div class="lab-showcase">
+
+          <div class="lab-copy">
+
+            <span class="section-tag">LEARN • CODE • DEBUG</span>
+
+            <h3>
+              Every expert
+              <span class="gradient-text">starts somewhere.</span>
+            </h3>
+
+            <p>
+              If you are beginning with C++, focus on understanding
+              each concept before moving to more complex programs.
+              Practise frequently and learn how to identify mistakes.
+            </p>
+
+            <div class="lab-features">
+              <div class="lab-feature"><span>✓</span> Variables & Data Types</div>
+              <div class="lab-feature"><span>✓</span> Input & Output</div>
+              <div class="lab-feature"><span>✓</span> Conditions & Loops</div>
+              <div class="lab-feature"><span>✓</span> Functions & Problem-Solving</div>
+            </div>
+
+            <a
+              class="btn btn-primary"
+              href="https://www.learncpp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore C++ Learning ↗
+            </a>
+
+          </div>
+
+          <div class="lab-visual" aria-label="Abstract coding and technology illustration">
+
+            <span class="lab-chip chip-ai">LOGIC</span>
+            <span class="lab-chip chip-code">C++</span>
+            <span class="lab-chip chip-robotics">ALGORITHMS</span>
+            <span class="lab-chip chip-vision">PRACTICE</span>
+
+            <div class="robot-core" aria-hidden="true">&lt;/&gt;</div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIVERSITY LIFE -->
+    <section class="about-section" id="university-life">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">LIFE BEYOND THE CLASSROOM</span>
+
+          <h2>
+            Learn to Live
+            <span>University Life.</span>
+          </h2>
+
+          <p>
+            University is also an opportunity to build responsibility,
+            communication skills and healthy everyday routines.
+          </p>
+        </div>
+
+        <div class="programme-grid">
+
+          <article class="programme-card">
+            <div class="card-icon">⌂</div>
+            <h3>Manage Your Routine</h3>
+            <p>
+              Plan your sleep, meals, personal tasks and study hours.
+              Give yourself time to adjust to a new environment.
+            </p>
+          </article>
+
+          <article class="programme-card">
+            <div class="card-icon">◎</div>
+            <h3>Build Good Connections</h3>
+            <p>
+              Treat classmates respectfully, communicate clearly
+              and work together on academic tasks.
+            </p>
+          </article>
+
+          <article class="programme-card">
+            <div class="card-icon">✦</div>
+            <h3>Look After Yourself</h3>
+            <p>
+              Maintain personal hygiene, eat regularly, stay active
+              and seek help when you need support.
+            </p>
+          </article>
+
+          <article class="programme-card">
+            <div class="card-icon">◇</div>
+            <h3>Be Responsible Online</h3>
+            <p>
+              Protect your accounts, use strong unique passwords
+              and verify information before sharing it.
+            </p>
+          </article>
+
+          <article class="programme-card">
+            <div class="card-icon">↗</div>
+            <h3>Explore Opportunities</h3>
+            <p>
+              Look for relevant workshops, student activities,
+              technical events and project opportunities.
+            </p>
+          </article>
+
+          <article class="programme-card">
+            <div class="card-icon">∞</div>
+            <h3>Keep Improving</h3>
+            <p>
+              Do not expect instant perfection. Learn from mistakes,
+              seek feedback and celebrate steady progress.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section class="orientation-section" id="next-steps">
+
+      <div class="container">
+
+        <div class="orientation-panel">
+
+          <div class="orientation-content">
+
+            <span class="section-tag">YOUR JOURNEY STARTS NOW</span>
+
+            <h2>
+              Stay Curious.
+              <span class="gradient-text">Keep Building.</span>
+            </h2>
+
+            <p>
+              Prepare for your classes, strengthen your fundamentals
+              and keep exploring the technologies that interest you.
+              Every small step contributes to your growth.
+            </p>
+
+            <div class="orientation-links">
+              <a class="btn btn-primary" href="index.html#programme">
+                Explore Robotics & AI ↗
+              </a>
+
+              <a class="btn btn-secondary" href="index.html">
+                Return to Homepage
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>ROBOTICS & AI — ORIENTATION EXPERIENCE</span>
-      <span>Designed by Muhammad Usman Akram</span>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <a class="logo" href="index.html">
+            <span class="logo-mark">MH</span>
+            <span class="logo-text">
+              <strong>UET TAXILA</strong>
+              <small>STUDENT ORIENTATION</small>
+            </span>
+          </a>
+
+          <p>
+            An independent student-created educational project
+            designed to help new learners explore university life,
+            programming and emerging technology.
+          </p>
+
+        </div>
+
+        <div class="footer-links">
+          <h4>Orientation</h4>
+          <a href="#academic-preparation">Study Preparation</a>
+          <a href="#programming">Programming Basics</a>
+          <a href="#university-life">University Life</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Useful Resources</h4>
+          <a
+            href="https://uettaxila.edu.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Official UET Taxila Website ↗</a>
+
+          <a
+            href="https://www.learncpp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Learn C++ ↗</a>
+
+          <a href="index.html">Main Homepage</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>© <span id="currentYear">2026</span> Orientation Project</p>
+
+        <p class="designer-credit">
+          Designed by MUHAMMAD HUSSNAIN AKRAM (MH)
+        </p>
+
+        <p>Independent student project; not an official university website.</p>
+
+      </div>
     </div>
   </footer>
-
-  <script src="js/orientation.js"></script>
 
 </body>
 </html>
