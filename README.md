@@ -5,7 +5,7 @@ artificial intelligence, engineering, and student learning.
 
 ## Designed By
 
-Muhammad Usman Akram
+Muhammad Hussnain Akram (MH)
 
 ## Features
 
