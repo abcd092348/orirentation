@@ -1,64 +1,103 @@
-```javascript
+
 /* =====================================================
    UET TAXILA ORIENTATION WEBSITE
-   Main JavaScript
    Designed by MUHAMMAD HUSSNAIN AKRAM (MH)
-   ===================================================== */
+===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
-    "use strict";
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile navigation
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-    // Mobile navigation
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+  if (menuToggle && navLinks) {
+    menuToggle.setAttribute("aria-expanded", "false");
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", function () {
-            const isOpen = navLinks.classList.toggle("is-open");
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
 
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation" : "Open navigation"
-            );
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Close menu after selecting a navigation link
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Close menu when returning to desktop layout
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 800) {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      }
+    });
+  }
+
+  // Automatically update the footer year
+  const currentYear = document.getElementById("currentYear");
+
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
+
+  // Smooth scrolling for links to sections on this page
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const targetId = link.getAttribute("href");
+
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+
+      if (target) {
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "start",
         });
+      }
+    });
+  });
 
-        // Close menu after selecting a navigation link
-        navLinks.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                navLinks.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open navigation");
-            });
+  // Add a visual effect when cards enter the viewport
+  const animatedCards = document.querySelectorAll(
+    ".programme-card, .nextgen-card"
+  );
+
+  if ("IntersectionObserver" in window && animatedCards.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
         });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
 
-        // Close menu when clicking outside the navigation
-        document.addEventListener("click", function (event) {
-            const clickedInsideMenu = navLinks.contains(event.target);
-            const clickedToggle = menuToggle.contains(event.target);
+    animatedCards.forEach((card) => observer.observe(card));
+  }
 
-            if (!clickedInsideMenu && !clickedToggle) {
-                navLinks.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open navigation");
-            }
-        });
-
-        // Restore navigation layout when switching to desktop width
-        window.addEventListener("resize", function () {
-            if (window.innerWidth > 700) {
-                navLinks.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Open navigation");
-            }
-        });
-    }
-
-    // Automatically update the copyright year
-    const currentYear = document.getElementById("currentYear");
-
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
+  console.log(
+    "UET Taxila Orientation Website | Designed by MUHAMMAD HUSSNAIN AKRAM (MH)"
+  );
 });
-```
